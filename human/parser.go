@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/baltikov/mlog-event-code-ib"
 	"io"
 	"strconv"
 	"strings"

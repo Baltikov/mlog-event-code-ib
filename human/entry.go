@@ -2,6 +2,7 @@ package human
 
 import (
 	"fmt"
+	"github.com/baltikov/mlog-event-code-ib"
 	"strings"
 	"time"
 )

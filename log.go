@@ -172,6 +172,8 @@ func NewLogger(config *LoggerConfiguration) *Logger {
 
 	logger.zap = zap.New(combinedCore,
 		zap.AddCaller(),
+		// TO-DO
+		zap.AddCallerSkip(1)
 	)
 	return logger
 }

@@ -8,8 +8,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-
-github.com/baltikov/mlog-event-code-ib
+	"github.com/baltikov/mlog-event-code-ib"
 )
 
 func TestLoggingBeforeInitialized(t *testing.T) {

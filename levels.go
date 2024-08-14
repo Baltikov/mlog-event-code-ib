@@ -60,9 +60,6 @@ type EventCodeGroup struct {
     LdapAuthSuccess int
 	UserIdentified int
 	LdapGroupIdentified int
-	LdapAuthSuccess int
-	UserIdentified int
-	LdapGroupIdentified int
 	UserRoleAssigned int
 	ServerStarting int
 	RateLimitingEnabled int
@@ -85,10 +82,10 @@ var INFO = EventCodeGroup{
 	UserIdentified: 1011, // Пользователь успешно идентифицирован по заголовку
 	LdapGroupIdentified: 1012, // Успешно идентифицирована группа пользователя через LDAP ib
 	UserRoleAssigned: 1014, // Назначение роли пользователю.
-	ServerStarting: 1015 //  начало процесса запуска сервера.
-	RateLimitingEnabled: 1016 // ограничение скорости запросов включено.
-	ServerListening: 1017 //  успешное начало прослушивания на указанном адресе
-	ServerStopped: 1018 // успешная остановку сервера.
+	ServerStarting: 1015, //  начало процесса запуска сервера.
+	RateLimitingEnabled: 1016, // ограничение скорости запросов включено.
+	ServerListening: 1017, //  успешное начало прослушивания на указанном адресе
+	ServerStopped: 1018, // успешная остановку сервера.
 }
 
 type WarningCodeGroup struct {
@@ -172,8 +169,8 @@ var CRITICAL = CriticalFatalCodeGroup{
 	AppCrash:              4004, // Аварийное завершение приложения
 	BusinessProcessFailed: 4005, // Поломка важного бизнес-процесса
 	RateLimitingFailed: 4006, // Ошибка при применении ограничения скорости
-	ServerListenFailed: 4007 // Ошибка при попытке начать прослушивание на заданном адрес
-	ServerServeFailed: 4008 // Ошибка при попытке запустить сервер.
+	ServerListenFailed: 4007, // Ошибка при попытке начать прослушивание на заданном адрес
+	ServerServeFailed: 4008, // Ошибка при попытке запустить сервер.
 	IndexOperationFailed: 4009, // Ошибка при создании или удалении индекса индекса в базе данных
 }
 

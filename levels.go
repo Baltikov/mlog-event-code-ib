@@ -67,6 +67,15 @@ var INFO = EventCodeGroup{
 	ServiceStarted:     1006, // Запуск сервиса
 	ServiceStopped:     1007, // Остановка сервиса
 	OperationCompleted: 1008, // Завершение операции
+	LdapConnectionSuccess: 1009, // Успешное подключение к LDAP серверу ib
+	LdapAuthSuccess: 1010, // Успешная аутентификация через LDAP ib
+	UserIdentified: 1011, // Пользователь успешно идентифицирован по заголовку
+	LdapGroupIdentified: 1012, // Успешно идентифицирована группа пользователя через LDAP ib
+	UserRoleAssigned: 1014, // Назначение роли пользователю.
+	ServerStarting: 1015 //  начало процесса запуска сервера.
+	RateLimitingEnabled: 1016 // ограничение скорости запросов включено.
+	ServerListening: 1017 //  успешное начало прослушивания на указанном адресе
+	ServerStopped: 1018 // успешная остановку сервера.
 }
 
 type WarningCodeGroup struct {
@@ -85,6 +94,10 @@ var WARN = WarningCodeGroup{
 	ParsingError:       2004, // Ошибки парсинга
 	UnsupportedConfig:  2005, // Неподдерживаемая конфигурация
 	HighApiLatency:     2006, // Повышенное время отклика внешнего API
+	NotFound:           2007, // Обработка ошибки 404 - маршрут не найден
+	DbRecycleStart: 2008, // Начало процесса перезапуска подключения к базе данных
+	DbRecycleEnd: 2009, // Завершение процесса перезапуска подключения к базе данных
+	ServerShutdownWarning: 2010, // предупреждение, если возникает ошибка при попытке корректно остановить сервер
 }
 
 type ErrorCodeGroup struct {
@@ -101,6 +114,13 @@ var ERROR = ErrorCodeGroup{
 	IOError:               3003, // Ошибка ввода/вывода
 	AuthFailed:            3004, // Сбой при аутентификации пользователя
 	DataIntegrationFailed: 3005, // Неуспешная интеграция данных
+	LdapAuthFailed: 3006, // Ошибка аутентификации через LDAP ib
+	LdapGroupSearchFailed: 3007, // Ошибка при поиске групп пользователя в LDAP ib
+	LdapGroupNotFound: 3008, // Группы пользователя не найдены в LDAP ib
+	TemplateParseFailed: 3009, // Ошибка при разборе HTML-шаблона
+	TemplateExecutionFailed: 3010, // Ошибка при выполнении HTML-шаблона
+	ConfigWatcherInitFailed: 3011, // Ошибка инициализации наблюдателя конфигурации
+	RateLimitExceeded: 3012, // Превышено ограничение скорости запросов
 }
 
 type CriticalFatalCodeGroup struct {
@@ -117,6 +137,10 @@ var CRITICAL = CriticalFatalCodeGroup{
 	ImmediateAttention:    4003, // Ошибка, требующая немедленного внимания
 	AppCrash:              4004, // Аварийное завершение приложения
 	BusinessProcessFailed: 4005, // Поломка важного бизнес-процесса
+	RateLimitingFailed: 4006, // Ошибка при применении ограничения скорости
+	ServerListenFailed: 4007 // Ошибка при попытке начать прослушивание на заданном адрес
+	ServerServeFailed: 4008 // Ошибка при попытке запустить сервер.
+	IndexOperationFailed: 4009, // Ошибка при создании или удалении индекса индекса в базе данных
 }
 
 type PanicCodeGroup struct {

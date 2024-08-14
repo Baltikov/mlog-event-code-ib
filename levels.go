@@ -56,6 +56,19 @@ type EventCodeGroup struct {
 	ServiceStarted     int
 	ServiceStopped     int
 	OperationCompleted int
+	LdapConnectionSuccess int
+    LdapAuthSuccess int
+	UserIdentified int
+	LdapGroupIdentified int
+	LdapAuthSuccess int
+	UserIdentified int
+	LdapGroupIdentified int
+	UserRoleAssigned int
+	ServerStarting int
+	RateLimitingEnabled int
+	ServerListening int
+	ServerStopped int
+	
 }
 
 var INFO = EventCodeGroup{
@@ -85,6 +98,11 @@ type WarningCodeGroup struct {
 	ParsingError       int
 	UnsupportedConfig  int
 	HighApiLatency     int
+	NotFound           int
+	DbRecycleStart     int
+	DbRecycleEnd       int
+	ServerShutdownWarning int
+
 }
 
 var WARN = WarningCodeGroup{
@@ -106,6 +124,17 @@ type ErrorCodeGroup struct {
 	IOError               int
 	AuthFailed            int
 	DataIntegrationFailed int
+	LdapAuthFailed int
+	LdapGroupSearchFailed int
+	LdapGroupNotFound int
+	TemplateParseFailed   int
+	TemplateExecutionFailed int
+	ConfigWatcherInitFailed int
+	RateLimitExceeded int
+
+
+
+
 }
 
 var ERROR = ErrorCodeGroup{
@@ -129,6 +158,11 @@ type CriticalFatalCodeGroup struct {
 	ImmediateAttention    int
 	AppCrash              int
 	BusinessProcessFailed int
+	RateLimitingFailed    int
+	ServerListenFailed    int
+	ServerServeFailed     int
+	IndexOperationFailed  int
+
 }
 
 var CRITICAL = CriticalFatalCodeGroup{
